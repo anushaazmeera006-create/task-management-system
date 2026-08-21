@@ -49,10 +49,11 @@ This guide will help you deploy the Task Management System to production using f
 6. Replace `<password>` with your actual password
 7. Save this connection string for later
 
-**Example connection string:**
+**Example connection string format:**
 ```
-mongodb+srv://taskmanager:your_password@taskmanager-cluster.xxxxx.mongodb.net/taskmanager?retryWrites=true&w=majority
+mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/<database>?retryWrites=true&w=majority
 ```
+Replace `<username>`, `<password>`, `<cluster-name>`, and `<database>` with your actual values.
 
 ---
 

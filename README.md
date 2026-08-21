@@ -10,7 +10,17 @@
 
 ---
 
-## 🌟 About This Project
+## � Live Deployment
+
+**Frontend:** https://task-management-system-8ti9xjk14.vercel.app  
+**Backend:** https://task-management-system-1-hmcw.onrender.com  
+**GitHub:** https://github.com/anushaazmeera006-create/task-management-system
+
+*Deployed on Vercel (frontend) and Render (backend) with MongoDB Atlas database*
+
+---
+
+## �🌟 About This Project
 
 This Task Management System represents my journey as a full-stack developer, showcasing my ability to build complete, production-ready applications from scratch. It's not just another todo app – it's a comprehensive solution designed to help users organize their tasks efficiently with a beautiful, intuitive interface.
 
