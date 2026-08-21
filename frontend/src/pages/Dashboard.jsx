@@ -170,13 +170,13 @@ const Dashboard = () => {
     <div className={`min-h-screen ${darkMode ? 'bg-violet-950' : 'bg-gradient-to-br from-violet-50 to-violet-100'}`}>
       <nav className={`shadow-lg ${darkMode ? 'bg-violet-900' : 'bg-white'}`}>
         <div className="w-[95%] mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className={`text-7xl font-bold ${darkMode ? 'text-white' : 'text-violet-900'}`}>Task Manager</h1>
+          <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-violet-900'}`}>Task Manager</h1>
           <div className="flex items-center gap-4">
             <button onClick={toggleDarkMode} className="p-2 rounded-lg hover:bg-violet-100 dark:hover:bg-violet-800 transition">
               {darkMode ? <Sun className="text-yellow-400" /> : <Moon className="text-violet-600" />}
             </button>
-            <span className={`font-semibold text-2xl ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>{user?.name}</span>
-            <button onClick={logout}              className={`flex items-center gap-2 px-6 py-3 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg transition text-2xl`}>
+            <span className={`font-semibold text-base ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>{user?.name}</span>
+            <button onClick={logout}              className={`flex items-center gap-2 px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg transition text-base`}>
               <LogOut size={20} />
               Logout
             </button>
@@ -190,8 +190,8 @@ const Dashboard = () => {
             <div className={`p-6 rounded-xl shadow-lg ${darkMode ? 'bg-violet-900' : 'bg-white'}`}>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className={`text-2xl font-medium ${darkMode ? 'text-violet-300' : 'text-gray-600'}`}>Total Tasks</p>
-                  <p className={`text-7xl font-bold ${darkMode ? 'text-white' : 'text-violet-900'}`}>{analytics.totalTasks}</p>
+                  <p className={`text-sm font-medium ${darkMode ? 'text-violet-300' : 'text-gray-600'}`}>Total Tasks</p>
+                  <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-violet-900'}`}>{analytics.totalTasks}</p>
                 </div>
                 <CheckCircle className="text-violet-600" size={32} />
               </div>
@@ -199,8 +199,8 @@ const Dashboard = () => {
             <div className={`p-6 rounded-xl shadow-lg ${darkMode ? 'bg-violet-900' : 'bg-white'}`}>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className={`text-2xl font-medium ${darkMode ? 'text-violet-300' : 'text-gray-600'}`}>Completed</p>
-                  <p className={`text-7xl font-bold ${darkMode ? 'text-white' : 'text-violet-900'}`}>{analytics.completedTasks}</p>
+                  <p className={`text-sm font-medium ${darkMode ? 'text-violet-300' : 'text-gray-600'}`}>Completed</p>
+                  <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-violet-900'}`}>{analytics.completedTasks}</p>
                 </div>
                 <CheckCircle className="text-green-600" size={32} />
               </div>
@@ -208,8 +208,8 @@ const Dashboard = () => {
             <div className={`p-6 rounded-xl shadow-lg ${darkMode ? 'bg-violet-900' : 'bg-white'}`}>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className={`text-2xl font-medium ${darkMode ? 'text-violet-300' : 'text-gray-600'}`}>Pending</p>
-                  <p className={`text-7xl font-bold ${darkMode ? 'text-white' : 'text-violet-900'}`}>{analytics.pendingTasks}</p>
+                  <p className={`text-sm font-medium ${darkMode ? 'text-violet-300' : 'text-gray-600'}`}>Pending</p>
+                  <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-violet-900'}`}>{analytics.pendingTasks}</p>
                 </div>
                 <Clock className="text-orange-600" size={32} />
               </div>
@@ -217,8 +217,8 @@ const Dashboard = () => {
             <div className={`p-6 rounded-xl shadow-lg ${darkMode ? 'bg-violet-900' : 'bg-white'}`}>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className={`text-2xl font-medium ${darkMode ? 'text-violet-300' : 'text-gray-600'}`}>Completion</p>
-                  <p className={`text-7xl font-bold ${darkMode ? 'text-white' : 'text-violet-900'}`}>{analytics.completionPercentage}%</p>
+                  <p className={`text-sm font-medium ${darkMode ? 'text-violet-300' : 'text-gray-600'}`}>Completion</p>
+                  <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-violet-900'}`}>{analytics.completionPercentage}%</p>
                 </div>
                 <AlertCircle className="text-violet-600" size={32} />
               </div>
@@ -235,14 +235,14 @@ const Dashboard = () => {
                 placeholder="Search tasks..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className={`w-full pl-10 pr-4 py-4 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-2xl ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
+                className={`w-full pl-10 pr-4 py-2 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-base ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
               />
             </div>
             <div className="flex gap-4">
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className={`px-5 py-4 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-2xl ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
+                className={`px-3 py-2 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-base ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
               >
                 <option value="">All Status</option>
                 <option value="Todo">Todo</option>
@@ -252,7 +252,7 @@ const Dashboard = () => {
               <select
                 value={filterPriority}
                 onChange={(e) => setFilterPriority(e.target.value)}
-                className={`px-5 py-4 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-2xl ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
+                className={`px-3 py-2 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-base ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
               >
                 <option value="">All Priority</option>
                 <option value="High">High</option>
@@ -266,7 +266,7 @@ const Dashboard = () => {
                   setSortBy(sort)
                   setSortOrder(order)
                 }}
-                className={`px-5 py-4 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-2xl ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
+                className={`px-3 py-2 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-base ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
               >
                 <option value="createdAt-desc">Newest First</option>
                 <option value="createdAt-asc">Oldest First</option>
@@ -282,7 +282,7 @@ const Dashboard = () => {
                 setFormData({ title: '', description: '', status: 'Todo', priority: 'Medium', dueDate: '' })
                 setShowModal(true)
               }}
-              className="flex items-center gap-2 px-8 py-4 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg transition text-2xl"
+              className="flex items-center gap-2 px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg transition text-base"
             >
               <Plus size={20} />
               Add Task
@@ -295,11 +295,11 @@ const Dashboard = () => {
             <table className="w-full">
               <thead className={`border-b ${darkMode ? 'border-violet-700' : 'border-gray-200'}`}>
                 <tr>
-                  <th className={`px-6 py-4 text-left text-2xl font-semibold ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Title</th>
-                  <th className={`px-6 py-4 text-left text-2xl font-semibold ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Status</th>
-                  <th className={`px-6 py-4 text-left text-2xl font-semibold ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Priority</th>
-                  <th className={`px-6 py-4 text-left text-2xl font-semibold ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Due Date</th>
-                  <th className={`px-6 py-4 text-left text-2xl font-semibold ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Actions</th>
+                  <th className={`px-6 py-3 text-left text-sm font-semibold ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Title</th>
+                  <th className={`px-6 py-3 text-left text-sm font-semibold ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Status</th>
+                  <th className={`px-6 py-3 text-left text-sm font-semibold ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Priority</th>
+                  <th className={`px-6 py-3 text-left text-sm font-semibold ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Due Date</th>
+                  <th className={`px-6 py-3 text-left text-sm font-semibold ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -307,22 +307,22 @@ const Dashboard = () => {
                   <tr key={task._id} className={`border-b ${darkMode ? 'border-violet-700 hover:bg-violet-800' : 'border-gray-100 hover:bg-gray-50'} transition`}>
                     <td className="px-6 py-4">
                       <div>
-                        <p className={`font-semibold text-2xl ${darkMode ? 'text-white' : 'text-gray-900'}`}>{task.title}</p>
-                        <p className={`text-2xl ${darkMode ? 'text-violet-300' : 'text-gray-500'}`}>{task.description}</p>
+                        <p className={`font-semibold text-base ${darkMode ? 'text-white' : 'text-gray-900'}`}>{task.title}</p>
+                        <p className={`text-sm ${darkMode ? 'text-violet-300' : 'text-gray-500'}`}>{task.description}</p>
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`px-4 py-2 rounded-full text-xl font-semibold ${getStatusColor(task.status)}`}>
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(task.status)}`}>
                         {task.status}
                       </span>
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`px-4 py-2 rounded-full text-xl font-semibold ${getPriorityColor(task.priority)}`}>
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getPriorityColor(task.priority)}`}>
                         {task.priority}
                       </span>
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`text-2xl ${darkMode ? 'text-violet-200' : 'text-gray-600'}`}>
+                      <span className={`text-sm ${darkMode ? 'text-violet-200' : 'text-gray-600'}`}>
                         {task.dueDate ? new Date(task.dueDate).toLocaleDateString() : 'No due date'}
                       </span>
                     </td>
@@ -371,17 +371,17 @@ const Dashboard = () => {
               <button
                 onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                 disabled={!pagination.hasPrevPage}
-                className="px-6 py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed text-2xl"
+                className="px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed text-sm"
               >
                 Previous
               </button>
-              <span className={`text-2xl ${darkMode ? 'text-violet-200' : 'text-gray-600'}`}>
+              <span className={`text-sm ${darkMode ? 'text-violet-200' : 'text-gray-600'}`}>
                 Page {pagination.currentPage} of {pagination.totalPages}
               </span>
               <button
                 onClick={() => setCurrentPage(p => p + 1)}
                 disabled={!pagination.hasNextPage}
-                className="px-6 py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed text-2xl"
+                className="px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed text-sm"
               >
                 Next
               </button>
@@ -393,36 +393,36 @@ const Dashboard = () => {
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className={`max-w-lg w-full p-6 rounded-2xl shadow-xl ${darkMode ? 'bg-violet-900' : 'bg-white'}`}>
-            <h2 className={`text-6xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-violet-900'}`}>
+            <h2 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-violet-900'}`}>
               {editingTask ? 'Edit Task' : 'Create New Task'}
             </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className={`block text-2xl font-medium mb-2 ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Title</label>
+                <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Title</label>
                 <input
                   type="text"
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className={`w-full px-4 py-4 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-2xl ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
+                  className={`w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-base ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
                   required
                 />
               </div>
               <div>
-                <label className={`block text-2xl font-medium mb-2 ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Description</label>
+                <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Description</label>
                 <textarea
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  className={`w-full px-4 py-4 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-2xl ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
+                  className={`w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-base ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
                   rows="3"
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className={`block text-2xl font-medium mb-2 ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Status</label>
+                  <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Status</label>
                   <select
                     value={formData.status}
                     onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                    className={`w-full px-4 py-4 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-2xl ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
+                    className={`w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-base ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
                   >
                     <option value="Todo">Todo</option>
                     <option value="In Progress">In Progress</option>
@@ -430,11 +430,11 @@ const Dashboard = () => {
                   </select>
                 </div>
                 <div>
-                  <label className={`block text-2xl font-medium mb-2 ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Priority</label>
+                  <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Priority</label>
                   <select
                     value={formData.priority}
                     onChange={(e) => setFormData({ ...formData, priority: e.target.value })}
-                    className={`w-full px-4 py-4 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-2xl ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
+                    className={`w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-base ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
                   >
                     <option value="Low">Low</option>
                     <option value="Medium">Medium</option>
@@ -443,12 +443,12 @@ const Dashboard = () => {
                 </div>
               </div>
               <div>
-                <label className={`block text-2xl font-medium mb-2 ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Due Date</label>
+                <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-violet-200' : 'text-gray-700'}`}>Due Date</label>
                 <input
                   type="date"
                   value={formData.dueDate}
                   onChange={(e) => setFormData({ ...formData, dueDate: e.target.value })}
-                  className={`w-full px-4 py-4 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-2xl ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
+                  className={`w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition text-base ${darkMode ? 'bg-violet-800 border-violet-700 text-white' : 'bg-gray-50 border-gray-300'}`}
                 />
               </div>
               <div className="flex gap-4 pt-4">
@@ -459,13 +459,13 @@ const Dashboard = () => {
                     setEditingTask(null)
                     setFormData({ title: '', description: '', status: 'Todo', priority: 'Medium', dueDate: '' })
                   }}
-                  className={`flex-1 px-6 py-4 border border-violet-600 text-violet-600 hover:bg-violet-50 dark:hover:bg-violet-800 rounded-lg transition text-2xl font-semibold`}
+                  className={`flex-1 px-4 py-2 border border-violet-600 text-violet-600 hover:bg-violet-50 dark:hover:bg-violet-800 rounded-lg transition text-sm font-semibold`}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 px-6 py-4 bg-violet-600 hover:bg-violet-700 text-white rounded-lg transition text-2xl font-semibold"
+                  className="flex-1 px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white rounded-lg transition text-sm font-semibold"
                 >
                   {editingTask ? 'Update' : 'Create'}
                 </button>
