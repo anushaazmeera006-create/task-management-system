@@ -4,6 +4,14 @@ import { useTheme } from '../context/ThemeContext'
 import axios from 'axios'
 import { Plus, Search, Filter, LogOut, Moon, Sun, CheckCircle, Clock, AlertCircle, MoreVertical, Edit, Trash2 } from 'lucide-react'
 
+const API_URL = import.meta.env.PROD 
+  ? 'https://task-management-system-1-hmcw.onrender.com' 
+  : 'http://localhost:5000'
+
+const api = axios.create({
+  baseURL: API_URL
+})
+
 const Dashboard = () => {
   const { user, logout } = useAuth()
   const { darkMode, toggleDarkMode } = useTheme()
@@ -46,7 +54,7 @@ const Dashboard = () => {
       if (filterPriority) params.append('priority', filterPriority)
 
       const token = localStorage.getItem('token')
-      const response = await axios.get(`/api/tasks?${params}`, {
+      const response = await api.get(`/api/tasks?${params}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       setTasks(response.data.tasks)
@@ -59,7 +67,7 @@ const Dashboard = () => {
   const fetchAnalytics = async () => {
     try {
       const token = localStorage.getItem('token')
-      const response = await axios.get('/api/analytics', {
+      const response = await api.get('/api/analytics', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setAnalytics(response.data.analytics)
@@ -76,11 +84,11 @@ const Dashboard = () => {
     
     try {
       if (editingTask) {
-        await axios.put(`/api/tasks/${editingTask._id}`, formData, {
+        await api.put(`/api/tasks/${editingTask._id}`, formData, {
           headers: { Authorization: `Bearer ${token}` }
         })
       } else {
-        await axios.post('/api/tasks', formData, {
+        await api.post('/api/tasks', formData, {
           headers: { Authorization: `Bearer ${token}` }
         })
       }
@@ -111,7 +119,7 @@ const Dashboard = () => {
     
     const token = localStorage.getItem('token')
     try {
-      await axios.delete(`/api/tasks/${taskId}`, {
+      await api.delete(`/api/tasks/${taskId}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       fetchTasks()
@@ -124,7 +132,7 @@ const Dashboard = () => {
   const handleComplete = async (taskId) => {
     const token = localStorage.getItem('token')
     try {
-      await axios.patch(`/api/tasks/${taskId}/complete`, {}, {
+      await api.patch(`/api/tasks/${taskId}/complete`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       })
       fetchTasks()

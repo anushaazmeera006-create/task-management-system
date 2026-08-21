@@ -1,6 +1,14 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 import axios from 'axios'
 
+const API_URL = import.meta.env.PROD 
+  ? 'https://task-management-system-1-hmcw.onrender.com' 
+  : 'http://localhost:5000'
+
+const api = axios.create({
+  baseURL: API_URL
+})
+
 const AuthContext = createContext()
 
 export const useAuth = () => useContext(AuthContext)
@@ -15,7 +23,7 @@ export const AuthProvider = ({ children }) => {
       const storedToken = localStorage.getItem('token')
       if (storedToken) {
         try {
-          const response = await axios.get('/api/auth/me', {
+          const response = await api.get('/api/auth/me', {
             headers: { Authorization: `Bearer ${storedToken}` }
           })
           setUser(response.data.user)
@@ -31,7 +39,7 @@ export const AuthProvider = ({ children }) => {
   }, [])
 
   const login = async (email, password) => {
-    const response = await axios.post('/api/auth/login', { email, password })
+    const response = await api.post('/api/auth/login', { email, password })
     localStorage.setItem('token', response.data.token)
     setToken(response.data.token)
     setUser(response.data.user)
@@ -39,7 +47,7 @@ export const AuthProvider = ({ children }) => {
   }
 
   const signup = async (name, email, password) => {
-    const response = await axios.post('/api/auth/signup', { name, email, password })
+    const response = await api.post('/api/auth/signup', { name, email, password })
     localStorage.setItem('token', response.data.token)
     setToken(response.data.token)
     setUser(response.data.user)
